@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concatenando Arrays</title>
+</head>
+<body>
+
+<label for="array1">Array 1:</label>
+<input type="text" id="array1" placeholder="Faça os elementos separados por vírgula">
+
+<label for="array2">Array 2:</label>
+<input type="text" id="array2" placeholder="Faça os elementos separados por vírgula">
+
+<button onclick="concatenateArrays()">Concatenar Arrays</button>
+
+<div id="result"></div>
+
+<script>
+    function concatenateArrays() {
+        
+        var inputArray1 = document.getElementById('array1').value;
+        var inputArray2 = document.getElementById('array2').value;
+        
+        
+        var array1 = inputArray1.split(',').map(Number);
+        var array2 = inputArray2.split(',').map(Number);
+        
+     
+        var concatenatedArray = array1.concat(array2);
+        
+        
+        var resultString = concatenatedArray.join(', ');
+        
+        
+        var resultElement = document.getElementById('result');
+        
+        
+        resultElement.innerHTML = 'Arrays concatenados: ' + resultString;
+    }
+</script>
+
+</body>
+</html>
